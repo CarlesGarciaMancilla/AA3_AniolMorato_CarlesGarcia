@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 1152
     height: 573
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -358,7 +358,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -366,16 +366,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\repos\AA3_AniolMorato_CarlesGarcia
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 4a5a0000
-    m_LastClickedID: 23114
-    m_ExpandedIDs: 00000000485a000000ca9a3b
+    m_SelectedIDs: 485a0000
+    m_LastClickedID: 23112
+    m_ExpandedIDs: 00000000505a0000d60a010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -545,9 +545,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 26550000
-      m_LastClickedID: 21798
-      m_ExpandedIDs: 20fbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 96a3ffff9ca3ffff20fbffff6e530000825400004e550000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -917,6 +917,19 @@ MonoBehaviour:
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: UnityEditor.SceneViewCameraOverlay
+      index: 11
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: 270c9cb088f43a840a134b91729e2b9f
   m_Gizmos: 1
@@ -928,9 +941,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 553.1431, y: 277.4718, z: -1.2394257}
+    m_Target: {x: -132.51506, y: 20.113873, z: -50.57273}
     speed: 2
-    m_Value: {x: 553.1431, y: 277.4718, z: -1.2394257}
+    m_Value: {x: -132.51506, y: 20.113873, z: -50.57273}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -976,13 +989,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.019498205, y: 0.9739422, z: -0.2063768, w: -0.092016466}
+    m_Target: {x: -0.00023799714, y: 0.9801047, z: -0.1984829, w: -0.0011748835}
     speed: 2
-    m_Value: {x: -0.019498186, y: 0.97394127, z: -0.20637661, w: -0.09201638}
+    m_Value: {x: -0.00023799688, y: 0.9801036, z: -0.19848269, w: -0.0011748822}
   m_Size:
-    m_Target: 142.879
+    m_Target: 15.138728
     speed: 2
-    m_Value: 142.879
+    m_Value: 15.138728
   m_Ortho:
     m_Target: 0
     speed: 2

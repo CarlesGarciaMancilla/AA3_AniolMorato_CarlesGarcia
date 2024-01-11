@@ -7,10 +7,8 @@ public class SliderStrenght : MonoBehaviour
 {
 
     public float strenght;
-    public float timer = 1f;
     public Slider strenghtSlider;
-    public bool up = true;
-    public bool down = false;
+
 
 
     // Start is called before the first frame update
@@ -22,30 +20,13 @@ public class SliderStrenght : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        while (strenghtSlider.value < strenghtSlider.maxValue && up) 
+        if (Input.GetKey(KeyCode.Space)) 
         {
-            strenghtSlider.value += 0.5f;           
+            strenght++;
+            strenghtSlider.value = strenght;
         }
 
-        while (strenghtSlider.value > strenghtSlider.minValue && down) 
-        {
-            strenghtSlider.value -= 0.5f;
-        }
-
-        if (strenghtSlider.value == strenghtSlider.maxValue) 
-        {
-         up = false;
-         down = true;
-
-        }
-        else if (strenghtSlider.value == strenghtSlider.minValue)
-        {
-            up = true;
-            down = false;
-
-        }
+       
 
 
     }
