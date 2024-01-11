@@ -7907,7 +7907,7 @@ MonoBehaviour:
   _myOctopus: {fileID: 310279045}
   _movementSpeed: 0.5
   strenght: 1
-  magnusStrenght: 1
+  magnusStrenght: 0
   target: {fileID: 1418656077}
   strenghtSlider: {fileID: 1331011669}
   magnusSlider: {fileID: 731054465}

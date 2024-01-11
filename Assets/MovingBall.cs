@@ -33,6 +33,12 @@ public class MovingBall : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            if (strenght > strenghtSlider.maxValue) 
+            {
+                strenghtSlider.value = strenghtSlider.maxValue;
+            }
+            else
+
             strenght++;
             strenghtSlider.value = strenght;
         }
@@ -71,9 +77,10 @@ public class MovingBall : MonoBehaviour
         Vector3 shoot = (target.transform.position - this.transform.position).normalized;
         rb.AddForce(strenght * shoot, ForceMode.Impulse);
         var direction = Vector3.Cross(rb.angularVelocity, rb.velocity) ;
-        var magnitude = 4 / 3f * Mathf.PI * magnusStrenght * Mathf.Pow(radius, 3);
-        rb.AddForce(magnitude * direction);
-
+        var magnitude = 2 * Mathf.PI * magnusStrenght * Mathf.Pow(radius, 2) * 0.5f;
+        rb.AddForce(magnitude * Vector3.up);
+        StartCoroutine(Wait());
+        
 
         
     }
