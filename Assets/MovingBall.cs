@@ -8,6 +8,11 @@ public class MovingBall : MonoBehaviour
     [SerializeField]
     IK_tentacles _myOctopus;
 
+    [SerializeField]
+    private LineRenderer LR;
+    [SerializeField]
+    private LineRenderer LRM;
+
     //movement speed in units per second
     [Range(-1.0f, 1.0f)]
     [SerializeField]
@@ -19,6 +24,13 @@ public class MovingBall : MonoBehaviour
     public GameObject target;
     public Slider strenghtSlider;
     public Slider magnusSlider;
+    public Vector3 direction;
+    public Vector3 shoot;
+    public float magnitude;
+    private int i = 0;
+    private int lineIndex =200;
+    private float timer =0.1f;
+    private Vector3 startPosition;
 
     Vector3 _dir;
 
@@ -26,6 +38,7 @@ public class MovingBall : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -33,13 +46,13 @@ public class MovingBall : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (strenght > strenghtSlider.maxValue) 
+            if (strenght > strenghtSlider.maxValue)
             {
                 strenghtSlider.value = strenghtSlider.maxValue;
             }
             else
 
-            strenght++;
+                strenght++;
             strenghtSlider.value = strenght;
         }
         else if (Input.GetKeyUp(KeyCode.Space))
@@ -47,15 +60,39 @@ public class MovingBall : MonoBehaviour
 
             Shoot();
         }
-        else if (Input.GetKey(KeyCode.Z)) 
+        else if (Input.GetKey(KeyCode.Z))
         {
-            magnusStrenght -=0.1f;
+
+            if (magnusStrenght < magnusSlider.minValue)
+            {
+                magnusSlider.value = magnusSlider.minValue;
+            }
+            else
+                magnusStrenght -= 0.1f;
             magnusSlider.value = magnusStrenght;
         }
         else if (Input.GetKey(KeyCode.X))
         {
-            magnusStrenght += 0.1f;
+            if (magnusStrenght > magnusSlider.maxValue)
+            {
+                magnusSlider.value = magnusSlider.maxValue;
+            }
+            else
+                magnusStrenght += 0.1f;
             magnusSlider.value = magnusStrenght;
+        }
+        else if (Input.GetKeyDown(KeyCode.I)) 
+        {
+            if (LR.enabled == true)
+            {
+                LR.enabled = false;
+                LRM.enabled = false;
+            }
+            else 
+            {
+                LR.enabled = true;
+                LRM.enabled = true;
+            }
         }
 
         transform.rotation = Quaternion.identity;
@@ -65,20 +102,30 @@ public class MovingBall : MonoBehaviour
         //get the Input from Vertical axis
         float verticalInput = Input.GetAxis("Vertical");
 
-        
+
         //update the position
         //transform.position = transform.position + new Vector3(-horizontalInput * _movementSpeed * Time.deltaTime, verticalInput * _movementSpeed * Time.deltaTime, 0);
+         shoot = (target.transform.position - this.transform.position).normalized;
+        
+         direction = Vector3.Cross(rb.angularVelocity, rb.velocity);
+         magnitude = 2 * Mathf.PI * magnusStrenght * Mathf.Pow(radius, 2) * 0.5f;
+
+
+        if (LR.enabled == true)
+        {
+            drawLine();
+            drawLineMagnuss();
+        }
+        
+        
 
     }
 
     void Shoot() 
     {
 
-        Vector3 shoot = (target.transform.position - this.transform.position).normalized;
-        rb.AddForce(strenght * shoot, ForceMode.Impulse);
-        var direction = Vector3.Cross(rb.angularVelocity, rb.velocity) ;
-        var magnitude = 2 * Mathf.PI * magnusStrenght * Mathf.Pow(radius, 2) * 0.5f;
-        rb.AddForce(magnitude * Vector3.up);
+        rb.AddForce(strenght * shoot,ForceMode.Impulse);
+        rb.AddForce(magnitude * Vector3.up,ForceMode.Force);
         StartCoroutine(Wait());
         
 
@@ -95,10 +142,41 @@ public class MovingBall : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         ResetGauge();
+        transform.position = startPosition;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         _myOctopus.NotifyShoot();
+    }
+
+    private void drawLineMagnuss()
+    {
+        i = 0;
+        startPosition = transform.position;
+        LRM.positionCount = lineIndex;
+        LRM.SetPosition(i, startPosition);
+        for (float j = 0; i < LRM.positionCount; j += timer) 
+        {
+            i++;
+            Vector3 linePosition = startPosition +j*(shoot * strenght) + (Vector3.up *magnitude);
+            //linePosition.y = startPosition.y + Vector3.up.y * magnitude;
+            LRM.SetPosition(i, linePosition);
+        }
+    }
+
+    private void drawLine()
+    {
+        i = 0;
+        startPosition = transform.position;
+        LR.positionCount = lineIndex;
+        LR.SetPosition(i, startPosition);
+        for (float j = 0; i < LR.positionCount; j += timer)
+        {
+            i++;
+            Vector3 linePosition = startPosition +j*(shoot * strenght) ;
+            //linePosition.y = startPosition.y + Vector3.up.y * magnitude;
+            LR.SetPosition(i, linePosition);
+        }
     }
 }
