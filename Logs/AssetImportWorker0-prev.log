@@ -1,17 +1,17 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.3f1 (7cdc2969a641) revision 8182825'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'es' Physical Memory: 16338 MB
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'ca' Physical Memory: 32524 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-D:\Program Files\Unity 2022.3.3f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2022.3.3f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/repos/AA3_AniolMorato_CarlesGarcia
+D:/GIT_REPOS/AA3_AniolMorato_CarlesGarcia
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
@@ -56,15 +56,15 @@ Player connection [396] Host "[IP] 192.168.1.38 [Port] 0 [Flags] 2 [Guid] 419592
 Refreshing native plugins compatible for Editor in 17.11 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.3f1 (7cdc2969a641)
-[Subsystems] Discovering subsystems at path D:/Program Files/Unity 2022.3.3f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/repos/AA3_AniolMorato_CarlesGarcia/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/GIT_REPOS/AA3_AniolMorato_CarlesGarcia/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c82)
+    Renderer: NVIDIA GeForce RTX 3080 (ID=0x2216)
     Vendor:   NVIDIA
-    VRAM:     4018 MB
-    Driver:   27.21.14.5751
+    VRAM:     10067 MB
+    Driver:   31.0.15.3770
 Initialize mono
 Mono path[0] = 'D:/Program Files/Unity 2022.3.3f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/Unity 2022.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
@@ -1356,7 +1356,7 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 1919ms
 	BeginReloadAssembly (185ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (40ms)
@@ -3328,6 +3328,30 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 1215.337269 seconds.
+  path: Assets/Resources
+  artifactKey: Guid(cab2665c3b8b25e46aad72fc21f5f771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources using Guid(cab2665c3b8b25e46aad72fc21f5f771) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1dc4a2a8cec2363179e627e75a3b377b') in 0.007932 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 5.258068 seconds.
+  path: Assets/Scripts/IK_Scorpion.cs
+  artifactKey: Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/IK_Scorpion.cs using Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c48350b79d7b00ed2316f513960ed7ef') in 0.000424 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1032.830617 seconds.
+  path: Assets/Scripts/IK_Scorpion.cs
+  artifactKey: Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/IK_Scorpion.cs using Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23b3568958235c7193887722cbaef0f5') in 0.000506 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
@@ -3340,7 +3364,7 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling: 1994ms
 	BeginReloadAssembly (183ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (9ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (38ms)
@@ -4319,6 +4343,14 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 39.253149 seconds.
+  path: Assets/Scripts/IK_Scorpion.cs
+  artifactKey: Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/IK_Scorpion.cs using Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a79d173eb99a44b6f7e367b9c7f2f8a4') in 0.002135 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
@@ -5311,6 +5343,14 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 35.991239 seconds.
+  path: Assets/Scripts/IK_Scorpion.cs
+  artifactKey: Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/IK_Scorpion.cs using Guid(27f152fca6933ad439214f8bce62898a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37a89e17a38bef525e76bdabe7b3437a') in 0.006154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
