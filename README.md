@@ -16,4 +16,10 @@ w es la velocitat angular
 r es el radi 
 El que fa el Magnuss Effect es donarli una rotació a la pilota de manera que canvia la trajectoria inicial d'aquesta
 
+L'Exercici 3 és a les següents parts:
+-MyScorpionController, línia 100
+-IK_Scorpion, línia 91
+-IK_Scorpion, línia 103
+Per la demostració de l'obstacle, hi ha un prisma a l'escena amb el tag "Floor"
+
 El Ecercise 5 es al script MyOctopusController i al MyTentacleController
