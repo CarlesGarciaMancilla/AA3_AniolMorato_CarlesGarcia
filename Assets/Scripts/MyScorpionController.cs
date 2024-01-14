@@ -97,14 +97,14 @@ namespace OctopusController
             {
                 Debug.Log("Starting Leg Base Distance Check");
 
-                RaycastHit suelo;
+                RaycastHit floor;
                 if (Vector3.Distance(_legs[i].Bones[0].position, legFutureBases[i].position) > futureBaseDistance)
                 {
-                    if (Physics.Raycast(legFutureBases[i].position + Vector3.up * 10.0f, Vector3.down, out suelo, Mathf.Infinity))
+                    if (Physics.Raycast(legFutureBases[i].position + Vector3.up * 10.0f, Vector3.down, out floor, Mathf.Infinity))
                     {
-                        if (suelo.transform.CompareTag("Floor"))
+                        if (floor.transform.CompareTag("Floor"))
                         {
-                            _legs[i].Bones[0].position = Vector3.Lerp(_legs[i].Bones[0].position, suelo.point, 1.4f);
+                            _legs[i].Bones[0].position = Vector3.Lerp(_legs[i].Bones[0].position, floor.point, 1.4f);
                         }
                         else
                         {
