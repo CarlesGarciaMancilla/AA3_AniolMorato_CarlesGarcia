@@ -27,6 +27,12 @@ namespace OctopusController
         public Transform[] LoadTentacleJoints(Transform root, TentacleMode mode)
         {
 
+            //List<Transform> bonesListLeg = new List<Transform>();
+
+            //List<Transform> bonesListTail = new List<Transform>();
+
+            //List<Transform> bonesListTentacle = new List<Transform>();
+
             Transform _bonesDupe = root;
             List<Transform> joints = new List<Transform>();
             //TODO: add here whatever is needed to find the bones forming the tentacle for all modes
@@ -37,6 +43,13 @@ namespace OctopusController
             {
                 case TentacleMode.LEG:
                     //TODO: in _endEffectorsphere you keep a reference to the base of the leg
+
+                    //AddToList(root, bonesListLeg);
+
+                    //_endEffectorSphere = bonesListLeg.First();
+
+                    //_bones = bonesListLeg.ToArray();
+
                     _bonesDupe = root.GetChild(0);
                     joints.Add(_bonesDupe);
                     do
@@ -52,6 +65,13 @@ namespace OctopusController
                     break;
                 case TentacleMode.TAIL:
                     //TODO: in _endEffectorsphere you keep a reference to the red sphere 
+
+                    //AddToList(root, bonesListTail);
+
+                    //_endEffectorSphere = bonesListTail.Last();
+
+                    //_bones = bonesListTail.ToArray();
+
                     joints.Add(_bonesDupe);
                     do
                     {
@@ -65,6 +85,13 @@ namespace OctopusController
                     break;
                 case TentacleMode.TENTACLE:
                     //TODO: in _endEffectorphere you  keep a reference to the sphere with a collider attached to the endEffector
+
+                    //AddToList(root, bonesListTentacle);
+
+                    //_endEffectorSphere = bonesListTentacle.Last();
+
+                    //_bones = bonesListTentacle.ToArray();
+
                     _bonesDupe = _bonesDupe.GetChild(0);
                     _bonesDupe = _bonesDupe.GetChild(0);
 
@@ -85,6 +112,49 @@ namespace OctopusController
             return Bones;
         }
 
+
+
+        //public float GetSwingAngle(int i)
+        //{
+        //    if (i > 0)
+        //    {
+        //        Vector3 direction = _bones[i].position - _bones[i - 1].position;
+        //        float swingAngle = Vector3.Angle(direction, Vector3.up);
+
+        //        return swingAngle;
+
+        //    }
+        //    else
+        //    {
+        //        Vector3 direction = new Vector3(0, 0, 0);
+        //        float swingAngle = Vector3.Angle(direction, Vector3.up);
+
+        //        return swingAngle;
+        //    }
+
+        //}
+
+
+
+        //public void SetSwingAngle(float newSwingAngle, int i)
+        //{
+
+        //    if (i > 0)
+        //    {
+
+
+        //        Vector3 currentDirection = _bones[i].position - _bones[i - 1].position;
+
+        //        Quaternion rotation = Quaternion.AngleAxis(newSwingAngle, Vector3.up);
+        //        Vector3 newDirection = rotation * currentDirection;
+        //        _bones[i].position = _bones[i - 1].position + newDirection;
+
+
+
+        //    }
+
+
+        //}
 
     }
 }
