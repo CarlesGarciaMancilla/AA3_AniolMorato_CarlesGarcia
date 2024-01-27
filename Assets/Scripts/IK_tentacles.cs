@@ -16,12 +16,12 @@ public class IK_tentacles : MonoBehaviour
 
 
     MyOctopusController _myController = new MyOctopusController();
-    
+
 
 
     [Header("Exercise 3")]
     [SerializeField, Range(0, 360)]
-    float _twistMin ;
+    float _twistMin;
 
     [SerializeField, Range(0, 360)]
     float _twistMax;
@@ -39,7 +39,7 @@ public class IK_tentacles : MonoBehaviour
 
 
     [SerializeField]
-    float TwistMin{set{ _myController.TwistMin = value; }}
+    float TwistMin { set { _myController.TwistMin = value; } }
 
 
 
@@ -64,7 +64,7 @@ public class IK_tentacles : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
         _myController.TestLogging(gameObject.name);
         _myController.Init(_tentacles, _randomTargets);
 
@@ -82,7 +82,8 @@ public class IK_tentacles : MonoBehaviour
     {
         _myController.UpdateTentacles();
 
-        if (_updateTwistSwingLimits) {
+        if (_updateTwistSwingLimits)
+        {
             _myController.TwistMax = _twistMax;
             _myController.TwistMin = _twistMin;
             _myController.SwingMax = _swingMax;
